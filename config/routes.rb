@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :photos
   devise_for :users
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
