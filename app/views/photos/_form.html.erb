@@ -41,6 +41,10 @@
     <%= form.text_field :longitude, id: :photo_longitude %>
   </div>
     <%= form.file_field :image %>
+
+    <%= collection_check_boxes(:photo, :category_ids, Category.all, :id, :name) do |t| %>
+      <%= t.label(class: "checkbox-inline") { t.check_box + t.text } %>
+    <% end %>
   <div class="actions">
     <%= form.submit %>
   </div>
